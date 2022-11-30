@@ -1,0 +1,49 @@
+.overlay {
+    position: absolute;
+    left: 49.5%;
+    bottom: -4%;
+    visibility: hidden;
+  }
+
+  .box {
+    position: absolute;
+    display: inline;
+    width: 160px;
+    height: 200px;
+    border: 2px solid black;
+    top: 15px;
+    left: 5;
+  }
+
+  #webcam {
+    position: relative;
+    left: 380px;
+  }
+
+  .container {
+    margin-left: 50%;
+  }
+
+  .middle {
+    margin-left: 27%;
+  }
+
+  button {
+    margin-left: 25%;
+    width: 150px;
+    height: 30px;
+    border: 2px solid black;
+    background: yellow;
+  }
+
+  #note
+  {
+    font-size: 150%;
+    margin-left: 10px;
+    margin-top: 2px;
+  }
+
+  .below
+  {
+    border: 2px solid black;
+  }

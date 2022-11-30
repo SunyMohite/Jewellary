@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+  <!-- OPEN WEBCAM  -->
+  <div><video id="webcam" autoplay playsinline width="700" height="400"></video>
+    <div class="box"> </div>
+  </div>
+
+  <br>
+  <button onclick="takepicture()">Capture</button>
+  <span id="note">Please put your face inside the box </span>
+  <br><br>
+
+  <!-- DISPLAY THE IMAGE WITH THE CHAIN  -->
+
+  <div class="middle">
+    <div>
+      <canvas id="canvas" class="d-none" width="700" height="500"></canvas>
+      <img src="image.png" alt="" width="160" height="150" id="x" class="overlay">
+      <img src="img2.png" alt="" width="155" height="150" id="y" class="overlay">
+
+
+    </div>
+  </div>
+
+
+  <br><br><br><br>
+  <div>
+    <img src="image.png" alt="" width="150" height="150" id="x" class="below" onclick="showimage1()">
+    <img src="img2.png" alt="" width="150" height="150" id="y" class="below" onclick="showimage2()">
+  </div>
+
+
+
+
+  <script>
+
+    const webcamElement = document.getElementById('webcam');
+    const canvasElement = document.getElementById('canvas');
+    const img = document.getElementById('x')
+    const img2 = document.getElementById('y')
+    const webcam = new Webcam(webcamElement, 'user', canvasElement);
+    webcam.start()
+
+
+    function takepicture() {
+      const picture = webcam.snap();
+      img.style.visibility = "visible"
+      img2.style.visibility = "hidden"
+
+    }
+    function showimage2() {
+      img.style.visibility = "hidden"
+      img2.style.visibility = "visible"
+
+    }
+    function showimage1() {
+      img2.style.visibility = "hidden"
+      img.style.visibility = "visible"
+    }
+
+
+  </script>
+</body>
+
+</html>
